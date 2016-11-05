@@ -52,13 +52,11 @@ class ProgressBar extends Component {
 
   render() {
     return (
-      <div>
-        <div style={this.backgroundStyle}>
-          <div style={this.foregroundStyle} />
-          <span style={sx.label}>
-            {this.widthPercentage}%
-          </span>
-        </div>
+      <div style={this.backgroundStyle}>
+        <div style={this.foregroundStyle} />
+        <span style={sx.label}>
+          {this.widthPercentage}%
+        </span>
       </div>
     );
   }

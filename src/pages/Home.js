@@ -25,7 +25,7 @@ class Home extends Component {
 
             <Flex flexColumn>
               <H3 style={{textAlign: 'center'}}>Out Of Network</H3>
-              <ProgressBar total={4500} current={4000} color={colors.darkGreen} />
+              <ProgressBar total={1000} current={400} color={colors.darkGreen} />
             </Flex>
 
             <Box flex justify="space-between">

@@ -8,6 +8,7 @@ import { Link as RouterLink } from 'react-router';
 import Link from '../components/Link';
 import Button from '../components/Button';
 import ProgressBar from '../components/ProgressBar';
+import AccountData from '../components/AccountData';
 
 class Home extends Component {
   render() {
@@ -22,19 +23,28 @@ class Home extends Component {
               <ProgressBar total={100} current={90} color={colors.darkGreen} />
             </Flex>
 
-            <Flex flexColumn>
-              <H3 style={{textAlign: 'center'}}>Jessica</H3>
-              <ProgressBar total={100} current={35} color={colors.lightGreen} />
-            </Flex>
+            <Box flex justify="space-between">
+              <Flex flexColumn style={{width: '45%'}}>
+                <H3 style={{textAlign: 'center'}}>Jessica</H3>
+                <ProgressBar total={100} current={35} color={colors.lightGreen} />
+              </Flex>
 
-            <Flex flexColumn>
-              <H3 style={{textAlign: 'center'}}>Johnny</H3>
-              <ProgressBar total={100} current={45} color={colors.lightGreen} />
-            </Flex>
+              <Flex flexColumn style={{width: '45%'}}>
+                <H3 style={{textAlign: 'center'}}>Johnny</H3>
+                <ProgressBar total={100} current={45} color={colors.lightGreen} />
+              </Flex>
+            </Box>
           </Box>
 
+          <Flex flexColumn>
+            <Box mt={4}>
+              <AccountData />
+            </Box>
+          </Flex>
+
           <Box mt={3} flex justify="flex-end">
-            <Button> Set up a payment plan </Button>
+            <Box mr={2} flex flexColumn> <Button>Make A Payment</Button> </Box>
+            <Box ml={2} flex flexColumn> <Button>View Bills</Button> </Box>
           </Box>
         </Box>
       </Page>

@@ -4,6 +4,7 @@ import { colors } from '../styles';
 import H3 from '../components/H3';
 import Page from '../components/Page';
 import P from '../components/P';
+import { Link as RouterLink } from 'react-router';
 import Link from '../components/Link';
 import Button from '../components/Button';
 import ProgressBar from '../components/ProgressBar';
@@ -13,7 +14,7 @@ class Home extends Component {
     return (
       <Page title="Hello, Johnny!">
         <Box>
-          <P> Check your <Link>upcoming appointments</Link> and <Link>account history.</Link> </P>
+          <P> Check your <RouterLink to="/upcoming"><Link>upcoming appointments</Link></RouterLink> and <RouterLink to="/history"><Link>account history.</Link></RouterLink> </P>
 
           <Box>
             <Flex flexColumn>

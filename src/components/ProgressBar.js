@@ -1,22 +1,22 @@
 import React, { Component, PropTypes } from 'react';
 import { font, colors } from '../styles';
+import color from 'color';
 
 const propTypes = {
   total: PropTypes.number,
   current: PropTypes.number,
   title: PropTypes.string,
+  color: PropTypes.string,
 };
 
 const sx = {
   bg: {
-    background: 'rgba(22,102,120,.35)',
     width: '100%',
     height: 40,
     display: 'flex',
     alignItems: 'center',
   },
   fg: {
-    background: colors.darkGreen,
     height: 32,
     marginLeft: 4,
   },
@@ -39,13 +39,21 @@ class ProgressBar extends Component {
     return {
       ...sx.fg,
       width: `${this.widthPercentage}%`,
+      background: this.props.color,
     };
+  }
+
+  get backgroundStyle() {
+    return {
+      ...sx.bg,
+      background: color(this.props.color).alpha(0.35).hslString(),
+    }
   }
 
   render() {
     return (
       <div>
-        <div style={sx.bg}>
+        <div style={this.backgroundStyle}>
           <div style={this.foregroundStyle} />
           <span style={sx.label}>
             {this.widthPercentage}%

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { colors } from './styles';
 import { Flex, Box } from 'reflexbox';
 import NavBar from './components/NavBar';
 import H3 from './components/H3';
@@ -20,17 +21,17 @@ class App extends Component {
             <Box>
               <Flex flexColumn>
                 <H3 style={{textAlign: 'center'}}>Family</H3>
-                <ProgressBar total={100} current={90} />
+                <ProgressBar total={100} current={90} color={colors.darkGreen} />
               </Flex>
 
               <Flex flexColumn>
                 <H3 style={{textAlign: 'center'}}>Jessica</H3>
-                <ProgressBar total={100} current={35} />
+                <ProgressBar total={100} current={35} color={colors.lightGreen} />
               </Flex>
 
               <Flex flexColumn>
                 <H3 style={{textAlign: 'center'}}>Johnny</H3>
-                <ProgressBar total={100} current={45} />
+                <ProgressBar total={100} current={45} color={colors.lightGreen} />
               </Flex>
             </Box>
 

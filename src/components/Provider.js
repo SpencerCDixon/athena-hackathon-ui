@@ -17,7 +17,7 @@ class Provider extends Component {
   render() {
     return (
       <p style={sx}>
-      {this.props.name}
+      {this.props.name} <i className="material-icons" style={{fontSize: "16px"}}>info</i>
       </p>
     );
   }

@@ -22,7 +22,7 @@ const sx = {
   },
   label: {
     fontFamily: font.bodyText,
-    fontWeigth: font.thin,
+    fontWeight: font.thin,
     color: colors.white,
     position: 'relative',
     left: '-35',

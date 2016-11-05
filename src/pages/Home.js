@@ -4,6 +4,8 @@ import { colors } from '../styles';
 import H3 from '../components/H3';
 import Page from '../components/Page';
 import P from '../components/P';
+import Provider from '../components/Provider';
+import Date from '../components/Date';
 import Link from '../components/Link';
 import Button from '../components/Button';
 import ProgressBar from '../components/ProgressBar';
@@ -17,7 +19,15 @@ class Home extends Component {
 
           <Box>
             <Flex flexColumn>
-              <H3 style={{textAlign: 'center'}}>Family</H3>
+              <Flex align="center" justify="space-between">
+              <Box>
+                <Provider name={"Athena Health"}/>
+              </Box>
+              <Box>
+                <Date date={"12/31/2016"}/>
+              </Box>
+              </Flex>
+              <H3 style={{textAlign: 'center', marginTop: '0px'}}>Family</H3>
               <ProgressBar total={100} current={90} color={colors.darkGreen} />
             </Flex>
 

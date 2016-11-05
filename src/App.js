@@ -3,17 +3,19 @@ import { BrowserRouter, Match, Miss, Link } from 'react-router'
 import { Flex, Box } from 'reflexbox';
 import NavBar from './components/NavBar';
 import Home from './pages/Home';
+import Upcoming from './pages/Upcoming';
 
 class App extends Component {
   render() {
     return (
-      <Flex flexColumn style={{height: '100%'}}>
-        <NavBar />
+      <BrowserRouter>
+        <Flex flexColumn style={{height: '100%'}}>
+          <NavBar />
 
-        <BrowserRouter>
           <Match exactly pattern="/" component={Home} />
-        </BrowserRouter>
-      </Flex>
+          <Match pattern="/upcoming" component={Upcoming} />
+        </Flex>
+      </BrowserRouter>
     );
   }
 }

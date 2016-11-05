@@ -8,7 +8,7 @@ const sx = {
   width: '100%',
 }
 
-function NavBar({  }) {
+function NavBar() {
   return (
     <Flex style={sx} align="center" justify="space-between">
       <Box pl={4}>

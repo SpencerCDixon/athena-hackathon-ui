@@ -7,16 +7,19 @@
   },
   "dependencies": {
     "color": "^0.11.4",
+    "material-ui": "^0.16.1",
     "radium": "^0.18.1",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-router": "^4.0.0-alpha.5",
+    "react-tap-event-plugin": "^1.0.0",
     "reflexbox": "^2.2.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "npm run build && netlify deploy ./build"
   }
 }

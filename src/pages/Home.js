@@ -21,7 +21,6 @@ class Home extends Component {
 
           <Box>
             <Flex flexColumn>
-<<<<<<< HEAD
               <Flex align="center" justify="space-between">
               <Box>
                 <Provider name={"Athena Health"}/>
@@ -31,9 +30,7 @@ class Home extends Component {
               </Box>
               </Flex>
               <H3 style={{textAlign: 'center', marginTop: '0px'}}>Family</H3>
-=======
               <H3 style={{textAlign: 'center'}}>In Network</H3>
->>>>>>> master
               <ProgressBar total={100} current={90} color={colors.darkGreen} />
             </Flex>
 

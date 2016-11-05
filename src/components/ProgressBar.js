@@ -32,7 +32,7 @@ const sx = {
 class ProgressBar extends Component {
   get widthPercentage() {
     const { current, total } = this.props;
-    return current / total * 100;
+    return Math.round(current / total * 100);
   }
 
   get foregroundStyle() {

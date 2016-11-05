@@ -19,8 +19,13 @@ class Home extends Component {
 
           <Box>
             <Flex flexColumn>
-              <H3 style={{textAlign: 'center'}}>Family</H3>
+              <H3 style={{textAlign: 'center'}}>In Network</H3>
               <ProgressBar total={100} current={90} color={colors.darkGreen} />
+            </Flex>
+
+            <Flex flexColumn>
+              <H3 style={{textAlign: 'center'}}>Out Of Network</H3>
+              <ProgressBar total={4500} current={4000} color={colors.darkGreen} />
             </Flex>
 
             <Box flex justify="space-between">

@@ -16,6 +16,7 @@ class App extends Component {
   componentDidMount() {
     axios.get('http://www.melnick.org/api/')
       .then(results => {
+        // debugger;
       });
   }
 

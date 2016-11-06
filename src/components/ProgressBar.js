@@ -25,7 +25,7 @@ const sx = {
   label: {
     color: colors.white,
     position: 'relative',
-    left: '-35',
+    left: -35,
   },
   total: {
     position: 'absolute',

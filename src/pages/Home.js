@@ -9,6 +9,7 @@ import Link from '../components/Link';
 import Button from '../components/Button';
 import ProgressBar from '../components/ProgressBar';
 import AccountData from '../components/AccountData';
+import StripeCheckout from 'react-stripe-checkout';
 
 class Home extends Component {
   render() {
@@ -50,8 +51,17 @@ class Home extends Component {
           </Flex>
 
           <Box mt={3} flex justify="flex-end">
-            <Box mr={2} flex flexColumn> <Button>Make A Payment</Button> </Box>
-            <Box ml={2} flex flexColumn> <Button>View Bills</Button> </Box>
+            <Box mr={2} flex flexColumn> 
+              <StripeCheckout
+                name="Deductr"
+                amount={25500}
+              >
+                <Button onClick={this.handleStripe}>Make A Payment</Button>
+              </StripeCheckout>
+            </Box>
+            <Box ml={2} flex flexColumn> 
+              <RouterLink to="/bills"> <Button>View Bills</Button> </RouterLink>
+            </Box>
           </Box>
         </Box>
       </Page>

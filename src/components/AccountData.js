@@ -2,6 +2,8 @@ import React, { PropTypes } from 'react';
 import Text from './Text';
 import { Flex, Box } from 'reflexbox';
 import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui/Table';
+import { Link as RouterLink } from 'react-router';
+import Link from './Link';
 
 function AccountData({  }) {
   return (
@@ -10,7 +12,9 @@ function AccountData({  }) {
         <TableBody displayRowCheckbox={false}>
           <TableRow>
             <TableRowColumn><Text bold>Account Balance: </Text></TableRowColumn>
-            <TableRowColumn><Text>$1,200</Text></TableRowColumn>
+            <TableRowColumn>
+              <RouterLink to="/bills"><Link><Text>$1,200</Text></Link></RouterLink>
+            </TableRowColumn>
           </TableRow>
           <TableRow>
             <TableRowColumn><Text bold>Payment Due Date:</Text></TableRowColumn>

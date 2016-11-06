@@ -5,10 +5,11 @@ const sx = {
   fontWeight: 300,
 };
 
-function Text({ children, bold = false}) {
+function Text({ children, style, bold = false}) {
   const finalStyles = Object.assign(
     sx,
-    bold ? { fontWeight: 700 } : { fontWeight: 300 }
+    bold ? { fontWeight: 700 } : { fontWeight: 300 },
+    style,
   );
 
   return (

@@ -5,6 +5,7 @@ import { space } from '../styles';
 
 const sx = {
   title: {
+    marginTop: space[0],
     marginBottom: space[0],
   },
   page: {

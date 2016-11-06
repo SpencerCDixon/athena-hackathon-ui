@@ -15,7 +15,7 @@ import AccountData from '../components/AccountData';
 class Home extends Component {
   render() {
     return (
-      <Page title="Hello, Johnny!">
+      <Page title="Hello, Alice!">
         <Box>
           <P> Check your <RouterLink to="/upcoming"><Link>upcoming appointments</Link></RouterLink> and <RouterLink to="/history"><Link>account history.</Link></RouterLink> </P>
 
@@ -36,9 +36,10 @@ class Home extends Component {
 
             <Flex flexColumn>
               <H3 style={{textAlign: 'center'}}>Out Of Network</H3>
-              <ProgressBar total={4500} current={4000} color={colors.darkGreen} />
+              <ProgressBar total={1000} current={400} color={colors.lightGreen} />
             </Flex>
 
+            {/*
             <Box flex justify="space-between">
               <Flex flexColumn style={{width: '45%'}}>
                 <H3 style={{textAlign: 'center'}}>Jessica</H3>
@@ -50,6 +51,7 @@ class Home extends Component {
                 <ProgressBar total={100} current={45} color={colors.lightGreen} />
               </Flex>
             </Box>
+            */}
           </Box>
 
           <Flex flexColumn>

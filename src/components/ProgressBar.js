@@ -1,4 +1,6 @@
 import React, { Component, PropTypes } from 'react';
+import Text from './Text';
+import formatUSD from 'format-usd';
 import { font, colors } from '../styles';
 import color from 'color';
 
@@ -27,6 +29,17 @@ const sx = {
     position: 'relative',
     left: '-35',
   },
+  total: {
+    position: 'absolute',
+    left: '101%',
+    top: '20%',
+  },
+  container: {
+    position: 'relative',
+  },
+  current: {
+    position: 'aboslute',
+  },
 }
 
 class ProgressBar extends Component {
@@ -50,12 +63,27 @@ class ProgressBar extends Component {
     }
   }
 
+  get currentStyle() {
+    return {
+      position: 'absolute',
+      left: `${this.widthPercentage}%`,
+    }
+  }
+
   render() {
     return (
-      <div style={this.backgroundStyle}>
-        <div style={this.foregroundStyle} />
-        <span style={sx.label}>
-          {this.widthPercentage}%
+      <div style={sx.container}>
+        <div style={this.backgroundStyle}>
+          <div style={this.foregroundStyle} />
+          <span style={sx.label}>
+            <Text>{this.widthPercentage}%</Text>
+          </span>
+        </div>
+        <span style={sx.total}>
+          <Text>{formatUSD({amount: this.props.total})}</Text>
+        </span>
+        <span style={this.currentStyle}>
+          <Text>{formatUSD({amount: this.props.current})}</Text>
         </span>
       </div>
     );

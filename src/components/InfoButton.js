@@ -16,16 +16,16 @@ const sx = {
   }
 };
 
-const InsuranceInfo = ({tooltip}) => (
+const InfoButton = ({tooltip, style}) => (
     <IconButton
       iconClassName="material-icons" 
       tooltip={tooltip}
       tooltipPosition="right"
       iconStyle={sx.smallIcon}
-      style={sx.small}
+      style={{...sx.small, ...style}}
     >
     info
     </IconButton>
 );
 
-export default InsuranceInfo;
+export default InfoButton;

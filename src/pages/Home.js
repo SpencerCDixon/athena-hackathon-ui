@@ -12,6 +12,7 @@ import Button from '../components/Button';
 import ProgressBar from '../components/ProgressBar';
 import AccountData from '../components/AccountData';
 import StripeCheckout from 'react-stripe-checkout';
+import InfoButton from '../components/InfoButton';
 import { FlatButton } from 'material-ui';
 
 class Home extends Component {
@@ -45,12 +46,18 @@ class Home extends Component {
 
           <Box>
             <Flex flexColumn>
-              <H3 style={{textAlign: 'center'}}>In Network</H3>
+              <H3 style={{textAlign: 'center'}}>
+                In Network
+                <InfoButton tooltip="This amount represents your out-of-pocket maximum." style={{marginLeft: 10}}/>
+              </H3>
               <ProgressBar total={inNetwork.total} current={inNetwork.current} color={colors.darkGreen} />
             </Flex>
 
             <Flex flexColumn>
-              <H3 style={{textAlign: 'center'}}>Out Of Network</H3>
+              <H3 style={{textAlign: 'center'}}>
+                Out Of Network
+                <InfoButton tooltip="This amount represents your out-of-pocket maximum." style={{marginLeft: 10}}/>
+              </H3>
               <ProgressBar total={outNetwork.total} current={outNetwork.current} color={colors.lightGreen} />
             </Flex>
           </Box>

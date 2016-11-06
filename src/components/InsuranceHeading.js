@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import InsuranceInfo from './InsuranceInfo'
+import InfoButton from './InfoButton'
 
 const sx = {
   fontFamily: 'Open Sans',
@@ -18,7 +18,7 @@ class InsuranceHeading extends Component {
   render() {
     return (
       <p style={sx}>
-      {this.props.name} <InsuranceInfo tooltip={this.props.tooltip} />
+      {this.props.name} <InfoButton tooltip={this.props.tooltip} />
       </p>
     );
   }

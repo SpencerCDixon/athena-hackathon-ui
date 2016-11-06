@@ -1,13 +1,14 @@
 import React from 'react';
-import face from '../images/uiface.png';
+import alice from '../images/Alice.jpg';
 
 const sx = {
   maxWidth: 40,
+  borderRadius: '50%',
 };
 
 function UIFace() {
   return (
-    <img src={face} style={sx} />
+    <img src={alice} style={sx} />
   );
 }
 

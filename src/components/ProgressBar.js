@@ -35,6 +35,9 @@ const sx = {
   container: {
     position: 'relative',
   },
+  current: {
+    position: 'aboslute',
+  },
 }
 
 class ProgressBar extends Component {
@@ -58,6 +61,13 @@ class ProgressBar extends Component {
     }
   }
 
+  get currentStyle() {
+    return {
+      position: 'absolute',
+      left: `${this.widthPercentage}%`,
+    }
+  }
+
   render() {
     return (
       <div style={sx.container}>
@@ -69,6 +79,9 @@ class ProgressBar extends Component {
         </div>
         <span style={sx.total}>
           <Text>{formatUSD({amount: this.props.total})}</Text>
+        </span>
+        <span style={this.currentStyle}>
+          <Text>{formatUSD({amount: this.props.current})}</Text>
         </span>
       </div>
     );

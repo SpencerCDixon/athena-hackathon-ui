@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import InsuranceInfo from './InsuranceInfo'
 
 const sx = {
   fontFamily: 'Open Sans',
@@ -13,15 +14,15 @@ const propTypes = {
   name: PropTypes.string,
 };
 
-class Provider extends Component {
+class InsuranceHeading extends Component {
   render() {
     return (
       <p style={sx}>
-      {this.props.name} <i className="material-icons" style={{fontSize: "16px"}}>info</i>
+      {this.props.name} <InsuranceInfo />
       </p>
     );
   }
 }
 
-Provider.propTypes = propTypes;
-export default Provider;
+InsuranceHeading.propTypes = propTypes;
+export default InsuranceHeading;

@@ -13,7 +13,7 @@ const propTypes = {
   date: PropTypes.string,
 };
 
-class Date extends Component {
+class DateHeading extends Component {
   render() {
     return (
       <p style={sx}>
@@ -23,5 +23,5 @@ class Date extends Component {
   }
 }
 
-Date.propTypes = propTypes;
-export default Date;
+DateHeading.propTypes = propTypes;
+export default DateHeading;

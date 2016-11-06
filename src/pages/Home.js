@@ -4,8 +4,8 @@ import { colors } from '../styles';
 import H3 from '../components/H3';
 import Page from '../components/Page';
 import P from '../components/P';
-import Provider from '../components/Provider';
-import Date from '../components/Date';
+import InsuranceHeading from '../components/InsuranceHeading';
+import DateHeading from '../components/DateHeading';
 import { Link as RouterLink } from 'react-router';
 import Link from '../components/Link';
 import Button from '../components/Button';
@@ -23,10 +23,10 @@ class Home extends Component {
             <Flex flexColumn>
               <Flex align="center" justify="space-between">
               <Box>
-                <Provider name={"Athena Health"}/>
+                <InsuranceHeading name={"Minuteman Health"}/>
               </Box>
               <Box>
-                <Date date={"12/31/2016"}/>
+                <DateHeading date={"12/31/2016"}/>
               </Box>
               </Flex>
               <H3 style={{textAlign: 'center', marginTop: '0px'}}>Family</H3>

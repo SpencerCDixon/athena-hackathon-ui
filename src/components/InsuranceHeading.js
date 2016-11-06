@@ -18,7 +18,7 @@ class InsuranceHeading extends Component {
   render() {
     return (
       <p style={sx}>
-      {this.props.name} <InsuranceInfo />
+      {this.props.name} <InsuranceInfo tooltip={this.props.tooltip} />
       </p>
     );
   }

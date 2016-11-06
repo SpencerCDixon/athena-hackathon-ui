@@ -16,9 +16,10 @@ const sx = {
   }
 };
 
-const InsuranceInfo = () => (
+const InsuranceInfo = ({tooltip}) => (
     <IconButton
-      iconClassName="material-icons" tooltip="Info about insurance plan"
+      iconClassName="material-icons" 
+      tooltip={tooltip}
       tooltipPosition="right"
       iconStyle={sx.smallIcon}
       style={sx.small}

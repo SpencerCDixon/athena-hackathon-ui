@@ -26,7 +26,7 @@ class App extends Component {
       .then(({data}) => {
         this.setState({
           isLoading: false,
-          insurances: data.insurances[0],
+          insurance: data.insurances[0],
           family: {
             inNetwork: {
               total: data[271][1295499915].outofpocket.FAM.calendar.in,
@@ -72,7 +72,12 @@ class App extends Component {
           <Flex flexColumn style={{height: '100%'}}>
             <NavBar />
             <Match exactly pattern="/" render={() => 
-              <Home data={this.state[this.state.filter]} changeFilter={this.changeFilter} filter={this.state.filter} />} 
+              <Home 
+                data={this.state[this.state.filter]} 
+                changeFilter={this.changeFilter} 
+                filter={this.state.filter} 
+                insurance={this.state.insurance}
+              />} 
             />
             <Match pattern="/upcoming" component={Upcoming} />
             <Match pattern="/bills" component={Bills} />

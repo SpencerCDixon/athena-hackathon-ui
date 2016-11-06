@@ -4,6 +4,8 @@ import { colors } from '../styles';
 import H3 from '../components/H3';
 import Page from '../components/Page';
 import P from '../components/P';
+import InsuranceHeading from '../components/InsuranceHeading';
+import DateHeading from '../components/DateHeading';
 import { Link as RouterLink } from 'react-router';
 import Link from '../components/Link';
 import Button from '../components/Button';
@@ -22,16 +24,23 @@ class Home extends Component {
       inNetwork,
       outNetwork,
     } = this.props.data;
-    const { filter } = this.props;
+    const { filter, insurance } = this.props;
+    console.log(this.props);
 
     return (
       <Page title="Hello, Alice!">
         <Box>
           <P> Check your <RouterLink to="/upcoming"><Link>upcoming appointments</Link></RouterLink> and <RouterLink to="/bills"><Link>outstanding bills</Link></RouterLink> </P>
 
-          <Flex justify="flex-end">
-            <FlatButton label="Family" disabled={filter === 'family'} onClick={this.handleFilterToggle.bind(this, 'family')}/>
-            <FlatButton label="Individual" disabled={filter === 'individual'} onClick={this.handleFilterToggle.bind(this, 'individual')}/>
+          <Flex>
+            <Box>
+              <InsuranceHeading name={insurance.insuranceplanname} tooltip={insurance.insurancephone}/>
+            </Box>
+            <Box flexAuto />
+            <Box>
+              <FlatButton label="Family" disabled={filter === 'family'} onClick={this.handleFilterToggle.bind(this, 'family')}/>
+              <FlatButton label="Individual" disabled={filter === 'individual'} onClick={this.handleFilterToggle.bind(this, 'individual')}/>
+            </Box>
           </Flex>
 
           <Box>

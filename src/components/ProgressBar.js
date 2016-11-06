@@ -23,6 +23,8 @@ const sx = {
     marginLeft: 4,
   },
   label: {
+    fontFamily: font.bodyText,
+    fontWeight: font.thin,
     color: colors.white,
     position: 'relative',
     left: -35,

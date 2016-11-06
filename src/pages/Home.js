@@ -4,6 +4,8 @@ import { colors } from '../styles';
 import H3 from '../components/H3';
 import Page from '../components/Page';
 import P from '../components/P';
+import InsuranceHeading from '../components/InsuranceHeading';
+import DateHeading from '../components/DateHeading';
 import { Link as RouterLink } from 'react-router';
 import Link from '../components/Link';
 import Button from '../components/Button';
@@ -36,6 +38,15 @@ class Home extends Component {
 
           <Box>
             <Flex flexColumn>
+              <Flex align="center" justify="space-between">
+              <Box>
+                <InsuranceHeading name={"Minuteman Health"}/>
+              </Box>
+              <Box>
+                <DateHeading date={"12/31/2016"}/>
+              </Box>
+              </Flex>
+              <H3 style={{textAlign: 'center', marginTop: '0px'}}>Family</H3>
               <H3 style={{textAlign: 'center'}}>In Network</H3>
               <ProgressBar total={inNetwork.total} current={inNetwork.current} color={colors.darkGreen} />
             </Flex>

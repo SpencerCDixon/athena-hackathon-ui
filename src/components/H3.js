@@ -3,7 +3,7 @@ import React, { PropTypes } from 'react';
 const sx = {
   fontFamily: 'Raleway',
   fontWeight: '100',
-  fontSize: '1.5em',
+  fontSize: '1.5em'
 };
 
 function H3({ children, style }) {

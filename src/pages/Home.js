@@ -10,38 +10,40 @@ import Button from '../components/Button';
 import ProgressBar from '../components/ProgressBar';
 import AccountData from '../components/AccountData';
 import StripeCheckout from 'react-stripe-checkout';
+import { FlatButton } from 'material-ui';
 
 class Home extends Component {
+  handleFilterToggle = (filter) => {
+    this.props.changeFilter(filter);
+  }
+
   render() {
+    const {
+      inNetwork,
+      outNetwork,
+    } = this.props.data;
+    const { filter } = this.props;
+
     return (
       <Page title="Hello, Alice!">
         <Box>
-          <P> Check your <RouterLink to="/upcoming"><Link>upcoming appointments</Link></RouterLink> and <RouterLink to="/history"><Link>account history.</Link></RouterLink> </P>
+          <P> Check your <RouterLink to="/upcoming"><Link>upcoming appointments</Link></RouterLink> and <RouterLink to="/bills"><Link>outstanding bills</Link></RouterLink> </P>
+
+          <Flex justify="flex-end">
+            <FlatButton label="Family" disabled={filter === 'family'} onClick={this.handleFilterToggle.bind(this, 'family')}/>
+            <FlatButton label="Individual" disabled={filter === 'individual'} onClick={this.handleFilterToggle.bind(this, 'individual')}/>
+          </Flex>
 
           <Box>
             <Flex flexColumn>
               <H3 style={{textAlign: 'center'}}>In Network</H3>
-              <ProgressBar total={100} current={90} color={colors.darkGreen} />
+              <ProgressBar total={inNetwork.total} current={inNetwork.current} color={colors.darkGreen} />
             </Flex>
 
             <Flex flexColumn>
               <H3 style={{textAlign: 'center'}}>Out Of Network</H3>
-              <ProgressBar total={1000} current={400} color={colors.lightGreen} />
+              <ProgressBar total={outNetwork.total} current={outNetwork.current} color={colors.lightGreen} />
             </Flex>
-
-            {/*
-            <Box flex justify="space-between">
-              <Flex flexColumn style={{width: '45%'}}>
-                <H3 style={{textAlign: 'center'}}>Jessica</H3>
-                <ProgressBar total={100} current={35} color={colors.lightGreen} />
-              </Flex>
-
-              <Flex flexColumn style={{width: '45%'}}>
-                <H3 style={{textAlign: 'center'}}>Johnny</H3>
-                <ProgressBar total={100} current={45} color={colors.lightGreen} />
-              </Flex>
-            </Box>
-            */}
           </Box>
 
           <Flex flexColumn>
